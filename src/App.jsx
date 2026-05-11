@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { API_KEY } from "../.env";
 import styles from "./App.module.css";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import HeaderDetails from "./components/HeaderDetails";
 import AirCondition from "./components/AirCondition";
+
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function App() {
   const [inputValue, setInputValue] = useState("New Delhi");
