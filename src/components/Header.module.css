@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--secondary-color);
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+  }
+
+  input::placeholder {
+    color: white;
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  button {
+    background: blue;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+}

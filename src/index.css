@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", Helvetica, sans-serif;
+  color: white;
+}
+
+:root {
+  --primary-color: rgb(6, 7, 28);
+  --secondary-color: rgb(38, 40, 79);
+  --secondary-font-color: gray;
+}

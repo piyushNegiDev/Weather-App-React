@@ -1,0 +1,21 @@
+.headerDetails {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  .firstHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    .placeName {
+      font-size: 2rem;
+    }
+    .temperature {
+      font-size: 4rem;
+    }
+  }
+  .secondHalf {
+    .mainImg {
+      width: 10rem;
+    }
+  }
+}
