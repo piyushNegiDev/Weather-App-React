@@ -5,7 +5,6 @@ export default function HeaderDetails({ place, weatherData }) {
     <div className={styles.headerDetails}>
       <div className={styles.firstHalf}>
         <h1 className={styles.placeName}>{place}</h1>
-        <h1 className={styles.temperature}>{weatherData.main.temp} &#8451;</h1>
       </div>
 
       <div className={styles.secondHalf}>
@@ -14,6 +13,7 @@ export default function HeaderDetails({ place, weatherData }) {
           src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
           alt="icon"
         />
+        <h1 className={styles.temperature}>{weatherData.main.temp} &#8451;</h1>
       </div>
     </div>
   );

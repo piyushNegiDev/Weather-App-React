@@ -4,7 +4,7 @@ export default function AirCondition({ weatherData }) {
   return (
     <div className={styles.airCondition}>
       <div className={styles.seeMore}>
-        <span>AIR CONDITION</span>
+        <span>Air Condition</span>
         <button>See More</button>
       </div>
 
