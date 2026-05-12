@@ -4,6 +4,7 @@ import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
 import HeaderDetails from "./components/HeaderDetails";
 import AirCondition from "./components/AirCondition";
+import TodaysForcast from "./components/TodaysForcast";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -11,6 +12,7 @@ export default function App() {
   const [inputValue, setInputValue] = useState("New Delhi");
   const [weatherData, setWeatherData] = useState(null);
   const [place, setPlace] = useState("New Delhi");
+  const [todayForcast, setTodayForcast] = useState(null);
 
   const fetchData = async (city) => {
     try {
@@ -33,6 +35,13 @@ export default function App() {
       const data2 = await response2.json();
       setWeatherData(data2);
       console.log(data2);
+
+      const response3 = await fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`,
+      );
+      const data3 = await response3.json();
+      setTodayForcast(data3);
+      console.log(data3);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +69,7 @@ export default function App() {
 
           <HeaderDetails place={place} weatherData={weatherData} />
 
-          <div className={styles.todaysForcast}></div>
+          <TodaysForcast todayForcast={todayForcast} />
 
           <AirCondition weatherData={weatherData} />
         </section>
