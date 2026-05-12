@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
-import styles from "./TodaysForcast.module.css";
+import styles from "./TodaysForecast.module.css";
 
-export default function TodaysForcast({ todayForcast }) {
+export default function TodaysForecast({ forecastData }) {
   const todayDate = dayjs().format("YYYY-MM-D");
 
-  const todayForcastTime = (value) => {
+  const todayForecastTime = (value) => {
     const time = new Date(value).toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
@@ -15,17 +15,17 @@ export default function TodaysForcast({ todayForcast }) {
   };
 
   return (
-    <div className={styles.todaysForcast}>
-      <p>Today Forcast</p>
-      <div className={styles.todayForcastCardContainer}>
-        {todayForcast?.list
+    <div className={styles.todaysForecast}>
+      <p>Today Forecast</p>
+      <div className={styles.todayForecastCardContainer}>
+        {forecastData?.list
           .filter((item) => {
             return item.dt_txt.includes(todayDate);
           })
           .map((item) => {
             return (
-              <div className={styles.todayForcastCard} key={item.dt}>
-                <span>{todayForcastTime(item.dt_txt)}</span>
+              <div className={styles.todayForecastCard} key={item.dt}>
+                <span>{todayForecastTime(item.dt_txt)}</span>
                 <img
                   src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`}
                   alt=""

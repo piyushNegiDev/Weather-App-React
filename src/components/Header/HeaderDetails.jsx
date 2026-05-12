@@ -13,7 +13,7 @@ export default function HeaderDetails({ place, weatherData }) {
           src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
           alt="icon"
         />
-        <h1 className={styles.temperature}>{weatherData.main.temp} &#8451;</h1>
+        <h2 className={styles.temperature}>{weatherData.main.temp} &#8451;</h2>
       </div>
     </div>
   );

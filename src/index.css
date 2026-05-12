@@ -10,4 +10,5 @@
   --primary-color: rgb(6, 7, 28);
   --secondary-color: rgb(38, 40, 79);
   --secondary-font-color: gray;
+  --card-border: 1px solid gray;
 }

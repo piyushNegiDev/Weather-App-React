@@ -1,6 +1,6 @@
 import styles from "./Header.module.css";
 
-export default function Header({ inputValue, setInputValue, fetchData }) {
+export default function Header({ inputValue, setInputValue, setStateData }) {
   return (
     <header className={styles.header}>
       <input
@@ -13,7 +13,7 @@ export default function Header({ inputValue, setInputValue, fetchData }) {
       />
       <button
         onClick={() => {
-          fetchData(inputValue);
+          setStateData(inputValue);
         }}
       >
         Search
