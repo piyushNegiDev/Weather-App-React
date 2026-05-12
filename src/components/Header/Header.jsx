@@ -1,6 +1,10 @@
 import styles from "./Header.module.css";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
-export default function Header({ inputValue, setInputValue, setStateData }) {
+export default function Header() {
+  const { inputValue, setInputValue, setStateData } = useContext(UserContext);
+
   return (
     <header className={styles.header}>
       <input
