@@ -19,26 +19,24 @@ export default function HomePage() {
   } = useContext(UserContext);
 
   return (
-    <div className={styles.appContainer}>
-      <div className={styles.homeContainer}>
-        <Sidebar />
+    <div className={styles.homeContainer}>
+      <Sidebar />
 
-        <section>
-          <Header
-            inputValue={inputValue}
-            setInputValue={setInputValue}
-            setStateData={setStateData}
-          />
+      <div className={styles.middleSection}>
+        <Header
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+          setStateData={setStateData}
+        />
 
-          <HeaderDetails place={place} weatherData={weatherData} />
+        <HeaderDetails place={place} weatherData={weatherData} />
 
-          <TodaysForecast forecastData={forecastData} />
+        <TodaysForecast forecastData={forecastData} />
 
-          <AirCondition weatherData={weatherData} />
-        </section>
-
-        <FiveDaysForecast forecastData={forecastData} />
+        <AirCondition weatherData={weatherData} />
       </div>
+
+      <FiveDaysForecast forecastData={forecastData} />
     </div>
   );
 }

@@ -1,0 +1,51 @@
+.cityPageContainer {
+  padding: 1rem;
+  background: var(--primary-color);
+  min-height: 100vh;
+  color: white;
+
+  display: flex;
+  gap: 1rem;
+}
+
+.middleSection {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  /* justify-content: space-between; */
+  flex-direction: column;
+}
+
+.citiesCardsContainer {
+  display: flex;
+  gap: 1.64rem;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
+}
+
+.cityCard {
+  background: var(--secondary-color);
+  /* width: 400px; */
+  padding: 1rem;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  span {
+    width: 100px;
+    text-align: center;
+  }
+}
+
+.navLink {
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    background: blue;
+  }
+}

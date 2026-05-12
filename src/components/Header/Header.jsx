@@ -1,6 +1,7 @@
 import styles from "./Header.module.css";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Header() {
   const { inputValue, setInputValue, setStateData } = useContext(UserContext);
@@ -15,13 +16,16 @@ export default function Header() {
         }}
         placeholder="Enter City"
       />
-      <button
-        onClick={() => {
-          setStateData(inputValue);
-        }}
-      >
-        Search
-      </button>
+
+      <NavLink className={styles.navLink} to="/">
+        <button
+          onClick={() => {
+            setStateData(inputValue);
+          }}
+        >
+          Search
+        </button>
+      </NavLink>
     </header>
   );
 }

@@ -1,14 +1,14 @@
-.appContainer {
+.homeContainer {
   padding: 1rem;
   background: var(--primary-color);
   min-height: 100vh;
-}
-.homeContainer {
+  color: white;
+
   display: flex;
   gap: 1rem;
 }
 
-section {
+.middleSection {
   width: 100%;
   display: flex;
   justify-content: space-between;

@@ -33,6 +33,11 @@
   }
 }
 
+.navLink {
+  text-decoration: none;
+  color: inherit;
+}
+
 .icons {
   width: 30px;
 }
