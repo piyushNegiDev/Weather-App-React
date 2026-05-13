@@ -1,13 +1,3 @@
-.cityPageContainer {
-  padding: 1rem;
-  background: var(--primary-color);
-  min-height: 100vh;
-  color: white;
-
-  display: flex;
-  gap: 1rem;
-}
-
 .middleSection {
   width: 100%;
   display: flex;
@@ -38,6 +28,18 @@
     width: 100px;
     text-align: center;
   }
+}
+
+.cityCardSkeleton {
+  height: calc(100px + 32px);
+  width: calc(32px + 464.203px);
+  background: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btnsContainer {

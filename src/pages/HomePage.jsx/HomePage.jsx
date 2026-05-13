@@ -19,7 +19,7 @@ export default function HomePage() {
   } = useContext(UserContext);
 
   return (
-    <div className={styles.homeContainer}>
+    <>
       <Sidebar />
 
       <div className={styles.middleSection}>
@@ -37,6 +37,6 @@ export default function HomePage() {
       </div>
 
       <FiveDaysForecast forecastData={forecastData} />
-    </div>
+    </>
   );
 }

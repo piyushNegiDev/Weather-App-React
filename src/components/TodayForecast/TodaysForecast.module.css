@@ -34,3 +34,9 @@
     width: 70px;
   }
 }
+
+@media screen and (min-width: 1366px) {
+  .todaysForecast {
+    min-width: 100%;
+  }
+}
