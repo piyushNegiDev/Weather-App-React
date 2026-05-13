@@ -1,5 +1,7 @@
 const API_KEY = import.meta.env.VITE_API_KEY;
 
+const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 const getCoordinates = async (city) => {
   try {
     const response = await fetch(
@@ -20,6 +22,8 @@ const getCoordinates = async (city) => {
 
 export const fetchData = async (city) => {
   try {
+    await delay(2000);
+
     const { lat, lon, name } = await getCoordinates(city);
 
     const [weatherResponse, forecastResponse] = await Promise.all([

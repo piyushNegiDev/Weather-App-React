@@ -6,6 +6,7 @@ import {
 } from "../utils/getterSetter";
 
 export function useAppData() {
+  const [isLoading, setIsloading] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [weatherData, setWeatherData] = useState(null);
   const [place, setPlace] = useState("");
@@ -15,11 +16,18 @@ export function useAppData() {
   );
 
   const setStateData = async (city) => {
-    const data = await fetchData(city);
-    setPlace(data.place);
-    setWeatherData(data.weather);
-    setForecastData(data.forecast);
-    setInputValue("");
+    try {
+      setIsloading(true);
+      const data = await fetchData(city);
+      setPlace(data.place);
+      setWeatherData(data.weather);
+      setForecastData(data.forecast);
+      setInputValue("");
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setIsloading(false);
+    }
   };
 
   useEffect(() => {
@@ -39,5 +47,6 @@ export function useAppData() {
     forecastData,
     addedCities,
     setAddedCities,
+    isLoading,
   };
 }
