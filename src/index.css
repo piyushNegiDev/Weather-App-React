@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", Helvetica, sans-serif;
+
+  cursor:
+    url("./assets/circle.svg") 8 8,
+    auto;
 }
 
 :root {
