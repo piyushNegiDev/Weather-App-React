@@ -1,6 +1,7 @@
 import styles from "./HeaderDetails.module.css";
 import { UserContext } from "../../context/UserContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import { setAddedCitiesToLocalStorage } from "../../utils/getterSetter";
 
 export default function HeaderDetails() {
   const { place, weatherData, addedCities, setAddedCities } =
@@ -11,6 +12,15 @@ export default function HeaderDetails() {
       const alreadyExists = prev.some((city) => city.name === place);
 
       if (alreadyExists) return prev;
+
+      setAddedCitiesToLocalStorage([
+        ...prev,
+        {
+          name: place,
+          temp: weatherData.main.temp,
+          icon: weatherData.weather[0].icon,
+        },
+      ]);
 
       return [
         ...prev,

@@ -2,15 +2,21 @@ import { useEffect, useState } from "react";
 import { UserContext } from "./context/UserContext";
 import { fetchData } from "./api/weatherApi";
 import { Routes, Route } from "react-router-dom";
+import {
+  getAddedCitiesFromLocalStorage,
+  getHomePageCityNameFromLocalStorage,
+} from "./utils/getterSetter";
 import HomePage from "./pages/HomePage.jsx/HomePage";
 import CityPage from "./pages/CityPage/CityPage";
 
 export default function App() {
-  const [inputValue, setInputValue] = useState("New Delhi");
+  const [inputValue, setInputValue] = useState("");
   const [weatherData, setWeatherData] = useState(null);
-  const [place, setPlace] = useState("New Delhi");
+  const [place, setPlace] = useState("");
   const [forecastData, setForecastData] = useState(null);
-  const [addedCities, setAddedCities] = useState([]);
+  const [addedCities, setAddedCities] = useState(
+    getAddedCitiesFromLocalStorage() || [],
+  );
 
   const setStateData = async (city) => {
     const data = await fetchData(city);
@@ -22,7 +28,7 @@ export default function App() {
 
   useEffect(() => {
     const loadInitialData = () => {
-      setStateData("New Delhi");
+      setStateData(getHomePageCityNameFromLocalStorage() || "New Delhi");
     };
 
     loadInitialData();

@@ -40,12 +40,16 @@
   }
 }
 
-.navLink {
-  button {
-    padding: 0.5rem 1rem;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    background: blue;
-  }
+.btnsContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.showBtn,
+.removeBtn {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  background: blue;
 }

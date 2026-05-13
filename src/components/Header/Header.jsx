@@ -2,6 +2,7 @@ import styles from "./Header.module.css";
 import { UserContext } from "../../context/UserContext";
 import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { setHomePageCityNameToLocalStorage } from "../../utils/getterSetter";
 
 export default function Header() {
   const { inputValue, setInputValue, setStateData } = useContext(UserContext);
@@ -21,6 +22,7 @@ export default function Header() {
         <button
           onClick={() => {
             setStateData(inputValue);
+            setHomePageCityNameToLocalStorage(inputValue);
           }}
         >
           Search
