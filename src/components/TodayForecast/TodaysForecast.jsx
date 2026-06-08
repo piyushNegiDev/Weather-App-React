@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import styles from "./TodaysForecast.module.css";
 
 export default function TodaysForecast({ forecastData }) {
-  const todayDate = dayjs().format("YYYY-MM-D");
+  const todayDate = dayjs().format("YYYY-MM-DD");
 
   const todayForecastTime = (value) => {
     const time = new Date(value).toLocaleTimeString([], {

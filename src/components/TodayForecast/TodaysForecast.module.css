@@ -3,6 +3,8 @@
   background: var(--secondary-color);
   border-radius: 1rem;
   max-width: 900px;
+  width: 100%;
+  min-width: 0;
 }
 
 .todayForecastCardContainer {
@@ -38,5 +40,24 @@
 @media screen and (min-width: 1366px) {
   .todaysForecast {
     min-width: 100%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .todaysForecast {
+    padding: 1rem 1rem calc(1rem - 10px) 1rem;
+    border-radius: 0.75rem;
+  }
+
+  .todayForecastCardContainer {
+    justify-content: flex-start;
+  }
+
+  .todayForecastCard {
+    min-width: 118px;
+
+    img {
+      width: 58px;
+    }
   }
 }

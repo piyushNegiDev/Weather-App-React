@@ -1,5 +1,6 @@
 .fiveDaysForecastContainer {
   width: 40%;
+  min-width: 320px;
   background-color: var(--secondary-color);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -41,6 +42,55 @@
 
       p {
         width: 70px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .fiveDaysForecastContainer {
+    width: 100%;
+    min-width: 0;
+
+    .forecastCardsContainer {
+      gap: 0.5rem;
+    }
+
+    .forecastCard {
+      min-height: 74px;
+    }
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .fiveDaysForecastContainer {
+    padding: 1rem;
+    border-radius: 0.75rem;
+
+    .forecastCard {
+      gap: 0.5rem;
+
+      span {
+        width: auto;
+        min-width: 48px;
+        font-size: 0.9rem;
+      }
+
+      .forecastImageContainer {
+        justify-content: flex-start;
+        min-width: 0;
+
+        img {
+          width: 52px;
+          flex-shrink: 0;
+        }
+
+        p {
+          width: auto;
+          min-width: 0;
+          font-size: 0.9rem;
+          overflow-wrap: anywhere;
+        }
       }
     }
   }

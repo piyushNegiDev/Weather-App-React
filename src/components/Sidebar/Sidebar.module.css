@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
+  flex-shrink: 0;
 
   height: calc(100vh - 2rem);
   padding: 2rem 0.5rem;
@@ -40,4 +41,49 @@
 
 .icons {
   width: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    height: 40px;
+    margin: 0 auto 0 0;
+  }
+
+  .sideBarIcons {
+    min-width: 64px;
+    gap: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    gap: 0.75rem;
+    padding: 0.65rem;
+    border-radius: 0.75rem;
+  }
+
+  .logo {
+    height: 34px;
+  }
+
+  .sideBarIcons {
+    min-width: 52px;
+  }
+
+  .icons {
+    width: 24px;
+  }
+
+  .iconName {
+    font-size: 0.8rem;
+  }
 }

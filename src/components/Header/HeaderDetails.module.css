@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 2rem;
+  gap: 1rem;
 
   .firstHalf {
     display: flex;
@@ -31,6 +32,54 @@
       width: 8rem;
       display: block;
       object-fit: cover;
+    }
+  }
+}
+
+.placeName,
+.temperature {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 640px) {
+  .headerDetails {
+    padding: 0 0.5rem;
+
+    .firstHalf {
+      justify-content: flex-start;
+      min-width: 0;
+
+      button {
+        flex-shrink: 0;
+      }
+    }
+
+    .secondHalf {
+      flex-shrink: 0;
+
+      .mainImg {
+        width: 6rem;
+      }
+    }
+  }
+
+  .placeName {
+    font-size: 1.7rem;
+  }
+
+  .temperature {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .headerDetails {
+    align-items: flex-start;
+    flex-direction: column;
+
+    .secondHalf {
+      width: 100%;
+      justify-content: space-between;
     }
   }
 }

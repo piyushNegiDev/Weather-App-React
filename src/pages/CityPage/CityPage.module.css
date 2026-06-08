@@ -1,5 +1,6 @@
 .middleSection {
   width: 100%;
+  min-width: 0;
   display: flex;
   gap: 2rem;
   /* justify-content: space-between; */
@@ -10,6 +11,7 @@
   display: flex;
   gap: 1.64rem;
   flex-wrap: wrap;
+  align-items: stretch;
   /* flex-direction: column; */
   /* justify-content: space-between; */
 }
@@ -19,20 +21,24 @@
   /* width: 400px; */
   padding: 1rem;
   border-radius: 1rem;
+  flex: 1 1 360px;
+  min-width: 0;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 
   span {
     width: 100px;
     text-align: center;
+    overflow-wrap: anywhere;
   }
 }
 
 .cityCardSkeleton {
   height: calc(100px + 32px);
-  width: calc(32px + 464.203px);
+  width: min(100%, calc(32px + 464.203px));
   background: var(--secondary-color);
   padding: 1rem;
   border-radius: 1rem;
@@ -45,6 +51,8 @@
 .btnsContainer {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .showBtn,
@@ -54,4 +62,67 @@
   border: none;
   color: white;
   background: blue;
+}
+
+@media screen and (max-width: 640px) {
+  .middleSection {
+    gap: 1rem;
+  }
+
+  .citiesCardsContainer {
+    gap: 1rem;
+  }
+
+  .cityCard {
+    flex-basis: 100%;
+    border-radius: 0.75rem;
+
+    img {
+      width: 64px;
+      flex-shrink: 0;
+    }
+
+    span {
+      width: auto;
+      min-width: 58px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .cityCardSkeleton {
+    min-height: 120px;
+    height: auto;
+    border-radius: 0.75rem;
+    text-align: center;
+  }
+
+  .showBtn,
+  .removeBtn {
+    padding: 0.45rem 0.75rem;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .cityCard {
+    align-items: stretch;
+    flex-direction: column;
+
+    img {
+      align-self: center;
+    }
+
+    span {
+      width: 100%;
+    }
+  }
+
+  .btnsContainer,
+  .navLink {
+    width: 100%;
+  }
+
+  .showBtn,
+  .removeBtn {
+    width: 100%;
+  }
 }
